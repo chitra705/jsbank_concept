@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deposit & withdraw</title>
+</head>
+<body>
+    <script>
+        let Bank_balence=10000;
+        let n=parseInt(prompt('Enter how many times:'));
+        for(i=1;i<=n;i++){
+        let activity=(prompt('select your Choice deposit/withdraw:'));
+        switch(activity){
+            case 'deposit':
+                let d=parseInt(prompt('Enter deposit amount:'))
+                Bank_balence=Bank_balence+d;
+                document.write('<br>Now your total balance is:'+Bank_balence)
+                break;
+            case 'withdraw':
+                var minimam_balence=1000;
+                let w=parseInt(prompt('Enter withdraw amount:'))
+                Bank_balence=Bank_balence-w;
+                let wt=Bank_balence;
+                if(minimam_balence<=wt){
+                    Bank_balence=Bank_balence-w;
+                    document.write('<br>Avail balence is:'+Bank_balence)
+                }
+                else{
+                    alert("Your balence is reached minimam balence,you can't able to withdraw")
+                }
+                break;
+            default:
+                document.write('enter valid choice')
+        }
+
+
+        }
+    </script>
+    
+</body>
+</html>
